@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!-- saved from url=(0136)file:///C:/Users/hugor/OneDrive%20-%20Instituto%20Polit%C3%A9cnico%20do%20Porto/4%C2%BA%20Semestre/TMM/trabalho%201/theplug.html#aboutme -->
+<html><head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+      <title> Work - Hugo </title>
+
+  <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 62.5%; /* 1rem = 10px */
+        }
+         
+        body {
+    font-family: "Oswald", Arial, Helvetica, sans-serif;
+    background-color: rgb(10, 10, 10); /* Background color */
+    color: #f1f1f1; /* Text color */
+    opacity: 0; /* Start with opacity 0 for fade-in */
+    transition: opacity 1.5s ease; /* Smooth fade effect */
+}
+
+.fade-in {
+    opacity: 1; /* Fade in effect */
+}
+
+.fade-out {
+    opacity: 0; /* Fade out effect */
+}
+
+
+    
+        /* Navbar superior*/
+
+        .navbar {
+            position: fixed;
+            height: 8.5vh;
+            width: 100%;
+            background-color: rgb(10, 10, 10);
+            padding: 1vh 0;
+            z-index: 1000;
+            box-shadow: 0 0.5vh 1vh hsl(0, 0%, 100%);
+            
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1vw;
+        }
+        
+        #title {
+            color: #f1f1f1;
+            font-size: 2vw;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 23vw;
+            
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1vw; /* space between links*/
+            margin-left: 50vh;
+            align-items: center;
+        }
+        
+        .nav-links li a {
+            text-decoration: none;
+            color: #f1f1f1;
+            border-radius: 2vh; /* Bordas arredondadas */
+            padding: 1vh 2vw; /* Padding vertical e horizontal */
+            text-transform: uppercase; /* Transforma todas as letras para minúsculas */
+            letter-spacing: 2px; /* Espaçamento entre letras */
+            cursor: pointer; /* Cursor padrão para links */
+            transition: all 0.3s ease; /* Transição suave */
+            font-size: 1vw;
+            
+        }
+        
+        .nav-links li a:hover {
+            background-color: hsl(0, 0%, 100%);
+            color: black;
+        }
+        
+        #instagram {
+            width: 1.5vw; /* Width of the Instagram icon */
+            height: auto; /* Height of the Instagram icon */
+            margin-right: 20vw;
+            filter: grayscale(100);
+            transition: filter 0.4s ease; /* Smooth transition for hover effect */
+            
+            }
+
+        #instagram:hover {
+            filter: grayscale(0); /* Revert to the original colors on hover */
+            
+
+        }
+
+
+        /* Gallery styles */
+
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            min-height: 80vh; /* Minimum height for consistency */
+            max-height: 100%; /* Prevents overflow */
+            width: 92%;
+            align-items: center;
+            justify-items: center;
+            margin: 0 auto; /* Center the gallery */
+            gap: 5vh; /* Space between photos */
+            padding: 5vh; /* Padding around the gallery */
+            padding-top: 17vh;
+
+        }
+        .gallety:hover .photo {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* White shadow on hover */
+        }
+        .photo {
+            position: relative;
+            width: 27vw;
+            height: auto;
+            transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+            
+        }
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+        }
+        .photo:hover img {
+            transform: scale(1.1);
+
+        }
+
+        /*overlay*/
+
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            border-radius: 10px;
+        }
+        .photo:hover .overlay {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5vh; /* Space between the title and logos */
+            width: 100%;
+        }
+
+        .title-text {
+    color: #ffffff;
+    font-size: 5vh; /* Adjust size as needed */
+    font-style: italic;
+    text-align: center;
+    font-weight: 500; /* Slightly bolder for title emphasis */
+}
+
+        .logos {
+    display: flex;
+    justify-content: center; /* Center the logos */
+    align-items: center; /* Center the logos vertically */
+    gap: 20px; /* Space between the logos */
+    flex-wrap: nowrap; /* Prevents logos from wrapping to the next line */
+}
+
+        .logos .logo {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
+        object-fit: contain; /* Keeps aspect ratio */
+
+    }
+
+.logo:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+
+
+        /* Bottom navigation bar */
+
+        .bottom-navbar {
+            width: 80%;
+            height: 5vh;
+            background-color: rgb(10, 10, 10); /* Dark background */
+            border-top: 0.1vh solid #ffffff; /* Thin white line at the top */
+            display: flex;
+            justify-content: center; /* align horizontally*/
+            align-items: center; /*align vertically*/
+            transform: translateX(12%);
+            
+        }
+
+        #bottom-text {
+            
+            color: #ffffff; /* Light text color */
+            font-size: 0.7vw; /* Adjust font size */
+            font-style: italic;
+        }
+
+    
+  </style>
+</head>
+<body>
+
+        <!-- Parte superior da página FIXA-->
+        <nav class="navbar">
+          <div class="nav-container">
+              <a href="index.html" id="title"> Hugo Matos</a>
+              <ul class="nav-links">
+                  <li><a href="aboutme.html">About me</a></li>
+                  <li><a href="contacts.html">Contacts</a></li>
+                  </li>
+              </ul>
+              <a href="https://www.instagram.com/" target="_blank"> 
+                  <img src="instagram.png" alt="Instagram" id="instagram"> 
+              </a>
+          </div>
+      </nav>
+  
+
+    <!-- Parte principal da página -->
+
+
+    <div class="gallery">
+        <div class="photo">
+            <img src="beatlesalbum1.jpg" alt="Thumbnail">
+            <div class="overlay">
+                <div class="content">
+                    <span class="title-text">Recording <br> Mixing, Mastering <br> 1964 </span>
+                    <div class="logos">
+                        <a href="https://music.apple.com/us/album/a-hard-days-night/1441164416" target="_blank">
+                            <img src="Apple_Music_icon.svg.png" alt="Apple Music Logo" class="logo">
+                        </a>
+                        <a href="https://open.spotify.com/intl-pt/album/6wCttLq0ADzkPgtRnUihLV?si=vTYouJSHSuywN9SmMpbwBA" target="_blank">
+                            <img src="Spotify_logo_without_text.svg" alt="Spotify Logo" class="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="beatlesalbum2.jpg" alt="Thumbnail">
+            <div class="overlay">
+                <div class="content">
+                    <span class="title-text">Mixing <br> 1967 </span>
+                    <div class="logos">
+                        <a href="https://music.apple.com/us/album/sgt-peppers-lonely-hearts-club-band-remix/1573250333" target="_blank">
+                            <img src="Apple_Music_icon.svg.png" alt="Apple Music Logo" class="logo">
+                        </a>
+                        <a href="https://open.spotify.com/intl-pt/album/6QaVfG1pHYl1z15ZxkvVDW?si=vb2CR_lDQ8C4_Uq9350fjw" target="_blank">
+                            <img src="Spotify_logo_without_text.svg" alt="Spotify Logo" class="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="kdotalbum.jpeg" alt="Thumbnail">
+            <div class="overlay">
+                <div class="content">
+                    <span class="title-text">Recording <br> 2024 </span>
+                    <div class="logos">
+                        <a href="https://music.apple.com/us/album/gnx/1781270319" target="_blank">
+                            <img src="Apple_Music_icon.svg.png" alt="Apple Music Logo" class="logo">
+                        </a>
+                        <a href="https://open.spotify.com/intl-pt/album/0hvT3yIEysuuvkK73vgdcW?si=cFW2AxRySbyRjXRQlUV37A" target="_blank">
+                            <img src="Spotify_logo_without_text.svg" alt="Spotify Logo" class="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="nwaalbum.jpg" alt="Thumbnail">
+            <div class="overlay">
+                <div class="content">
+                    <span class="title-text">Production <br> 1988 </span>
+                    <div class="logos">
+                        <a href="https://music.apple.com/us/album/straight-outta-compton/1440816032" target="_blank">
+                            <img src="Apple_Music_icon.svg.png" alt="Apple Music Logo" class="logo">
+                        </a>
+                        <a href="https://open.spotify.com/intl-pt/album/0Y7qkJVZ06tS2GUCDptzyW?si=Jr004HMfS0urkoCzjyFg1A" target="_blank">
+                            <img src="Spotify_logo_without_text.svg" alt="Spotify Logo" class="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="joeybadalbum.png" alt="Thumbnail">
+            <div class="overlay">
+                <div class="content">
+                    <span class="title-text">Production, Recording <br> 2012 </span>
+                    <div class="logos">
+                        <a href="https://music.apple.com/us/album/1999/1396290965" target="_blank">
+                            <img src="Apple_Music_icon.svg.png" alt="Apple Music Logo" class="logo">
+                        </a>
+                        <a href="https://open.spotify.com/intl-pt/album/5ra51AaWF3iVebyhlZ1aqq?si=rp3BGYSSQGKDeqrwd524Hg" target="_blank">
+                            <img src="Spotify_logo_without_text.svg" alt="Spotify Logo" class="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="kdotalbumdamn.jpg" alt="Thumbnail">
+            <div class="overlay">
+                <div class="content">
+                    <span class="title-text">Mixing, Mastering <br> 2017 </span>
+                    <div class="logos">
+                        <a href="https://music.apple.com/us/album/damn/1440881047" target="_blank">
+                            <img src="Apple_Music_icon.svg.png" alt="Apple Music Logo" class="logo">
+                        </a>
+                        <a href="https://open.spotify.com/intl-pt/album/4eLPsYPBmXABThSJ821sqY?si=VVE_uu19QoSL7PMB8DnFjg" target="_blank">
+                            <img src="Spotify_logo_without_text.svg" alt="Spotify Logo" class="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <!-- Parte inferior da página -->
+
+    <nav class="bottom-navbar">
+
+      <div>
+          <p id="bottom-text"> © 2025 Hugo Matos. All rights reserved. </p>
+      </div>
+     
+             
+    </nav>
+
+    <script>
+        // Add the fade-in class when the page finishes loading
+        window.onload = () => {
+        document.body.classList.add("fade-in");
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll("a"); // Select all links
+
+        links.forEach(link => {
+            // Skip links with target="_blank"
+            if (link.target === "_blank") return;
+
+            link.addEventListener("click", (e) => {
+                e.preventDefault(); // Prevent default navigation
+                const href = link.getAttribute("href"); // Get the link's href
+
+                // Add the fade-out effect
+                document.body.classList.remove("fade-in");
+                document.body.classList.add("fade-out");
+
+                // Wait for the animation to complete, then navigate
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 1500); // Match the CSS animation duration
+            });
+        });
+    });
+    </script>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!-- saved from url=(0136)file:///C:/Users/hugor/OneDrive%20-%20Instituto%20Polit%C3%A9cnico%20do%20Porto/4%C2%BA%20Semestre/TMM/trabalho%201/theplug.html#aboutme -->
+<html><head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+      <title> Contacts - Hugo </title>
+
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+      <script type="text/javascript">
+          (function() {
+            emailjs.init({publicKey: "b1B9GGGtygzVUdKGM", });
+          })();
+        </script>
+
+  <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 62.5%; /* 1rem = 10px */
+        }
+         
+        body {
+    font-family: "Oswald", Arial, Helvetica, sans-serif;
+    background-color: rgb(10, 10, 10); /* Background color */
+    color: #f1f1f1; /* Text color */
+    opacity: 0; /* Start with opacity 0 for fade-in */
+    transition: opacity 1.5s ease; /* Smooth fade effect */
+}
+
+.fade-in {
+    opacity: 1; /* Fade in effect */
+}
+
+.fade-out {
+    opacity: 0; /* Fade out effect */
+}
+    
+        /* Navbar superior*/
+
+        .navbar {
+            position: fixed;
+            height: 8.5vh;
+            width: 100%;
+            background-color: rgb(10, 10, 10);
+            padding: 1vh 0;
+            z-index: 1000;
+            box-shadow: 0 0.5vh 1vh hsl(0, 0%, 100%);
+            
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1vw;
+        }
+        
+        #title {
+            color: #f1f1f1;
+            font-size: 2vw;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 23vw;
+            
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1vw; /* space between links*/
+            margin-left: 50vh;
+            align-items: center;
+        }
+        
+        .nav-links li a {
+            text-decoration: none;
+            color: #f1f1f1;
+            border-radius: 2vh; /* Bordas arredondadas */
+            padding: 1vh 2vw; /* Padding vertical e horizontal */
+            text-transform: uppercase; /* Transforma todas as letras para minúsculas */
+            letter-spacing: 2px; /* Espaçamento entre letras */
+            cursor: pointer; /* Cursor padrão para links */
+            transition: all 0.3s ease; /* Transição suave */
+            font-size: 1vw;
+            
+        }
+        
+        .nav-links li a:hover {
+            background-color: hsl(0, 0%, 100%);
+            color: black;
+        }
+        
+        #instagram {
+            width: 1.5vw; /* Width of the Instagram icon */
+            height: auto; /* Height of the Instagram icon */
+            margin-right: 20vw;
+            filter: grayscale(100);
+            transition: filter 0.4s ease; /* Smooth transition for hover effect */
+            
+            }
+
+        #instagram:hover {
+            filter: grayscale(0); /* Revert to the original colors on hover */
+            
+
+        }
+
+
+
+   /* Hero Section */
+   .hero {
+        position: relative;
+        height: 50vh; /* Set height relative to the viewport */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: -15vh;
+        margin-left: 2vw;
+    }
+
+    .hero-content h1 {
+        font-size: 3vw; /* Adjust font size relative to the viewport */
+        margin-bottom: 3vh; /* Add spacing below the title */
+        letter-spacing: 1px; /* Add letter spacing */
+
+    }
+
+    .hero-content p {
+        font-size: 1.5vw; /* Adjust font size relative to the viewport */
+
+    }
+
+    /* Contact Form Section */
+    .contact-form-section {
+        background: #fff;
+        padding: 3vh 2vw; /* Adjust padding using vh and vw */
+        max-width: 60vw; /* Set max width relative to the viewport */
+        margin: 5vh auto; /* Center the form with vertical and horizontal margins */
+        margin-right: 20vw;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        text-align: center;
+
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2vw; /* Adjust gap between form elements */
+        justify-content: center; /* Center form elements horizontally */
+    }
+
+    .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5vh;
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+
+    /* For two inputs side by side (e.g., Name & Phone) on larger screens */
+
+    @media (min-width: 600px) {
+        .form-half {
+            flex: 1 1 48%;
+        }
+    }
+
+
+    label {
+            font-size: 1.2vw;
+            cursor: pointer;
+            color: rgb(10, 10, 10);
+            margin-left: 0.5vw;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1vh 1vw;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1vw;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 15vh;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: rgb(10, 10, 10);
+        }
+
+        button[type="submit"] {
+            background: rgb(10, 10, 10);
+            color: #ffffff;
+            border: none;
+            padding: 1vh 2vw;
+            font-size: 1.2vw;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 2vh;
+        }
+
+        button[type="submit"]:hover {
+            background: rgb(255, 255, 255);
+            color: rgb(10, 10, 10)
+        }
+
+        /* Bottom navigation bar */
+
+        .bottom-navbar {
+            width: 80%;
+            height: 5vh;
+            background-color: rgb(10, 10, 10); /* Dark background */
+            border-top: 0.1vh solid #ffffff; /* Thin white line at the top */
+            display: flex;
+            justify-content: center; /* align horizontally*/
+            align-items: center; /*align vertically*/
+            transform: translateX(12%);
+            
+        }
+
+        #bottom-text {
+            
+            color: #ffffff; /* Light text color */
+            font-size: 0.7vw; /* Adjust font size */
+            font-style: italic;
+        }
+
+    
+  </style>
+</head>
+<body>
+
+        <!-- Parte superior da página FIXA-->
+        <nav class="navbar">
+          <div class="nav-container">
+              <a href="index.html" id="title"> Hugo Matos</a>
+              <ul class="nav-links">
+                  <li><a href="aboutme.html">About me</a></li>
+                  <li><a href="work.html">Work</a></li>
+                  </li>
+              </ul>
+              <a href="https://www.instagram.com/" target="_blank"> 
+                  <img src="instagram.png" alt="Instagram" id="instagram"> 
+              </a>
+          </div>
+      </nav>
+  
+
+
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Queres um parceiro de Sueca ou uma boa mistura?</h1>
+      <p>Seja um ou outro, fala comigo!</p>
+    </div>
+  </header>
+
+  <!-- Contact Form Section -->
+  <section class="contact-form-section">
+    <form id="contact-form">
+        <div class="form-group form-half">
+            <label for="name">Nome</label><br/>
+            <input type="text" id="name" name="name" placeholder="Hugo" required>
+        </div>
+        <div class="form-group form-half">
+            <label for="phone">Phone Number</label><br/>
+            <input type="tel" id="phone" name="phone" placeholder="+351 912 345 678" required>
+        </div>
+        <div class="form-group" style="flex-basis: 100%;">
+            <textarea id="message" name="message" placeholder="Tell me what you want, what you REALLY REALLY want..." required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+    <!-- Parte inferior da página -->
+
+    <nav class="bottom-navbar">
+
+      <div>
+          <p id="bottom-text"> © 2025 Hugo Matos. All rights reserved. </p>
+      </div>
+     
+             
+  </nav>
+
+<script>
+ 
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent page refresh
+  
+        // Collect form data
+        const formData = {
+            name: document.getElementById("name").value,
+            phone: document.getElementById("phone").value,
+            message: document.getElementById("message").value
+        };
+  
+        // Send email using EmailJS
+        emailjs.send("service_8up2ua8", "template_hopi584", formData)
+            .then(function(response) {
+                alert("Message sent successfully!");
+                console.log("EmailJS Response:", response);
+                document.getElementById("contact-form").reset(); // Clear form after submission
+            }, function(error) {
+                alert("Failed to send message. Try again later.");
+                console.log("EmailJS Error:", error);
+            });
+    });
+  </script>
+
+<script>
+        // Add the fade-in class when the page finishes loading
+        window.onload = () => {
+        document.body.classList.add("fade-in");
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll("a"); // Select all links
+
+        links.forEach(link => {
+            // Skip links with target="_blank"
+            if (link.target === "_blank") return;
+
+            link.addEventListener("click", (e) => {
+                e.preventDefault(); // Prevent default navigation
+                const href = link.getAttribute("href"); // Get the link's href
+
+                // Add the fade-out effect
+                document.body.classList.remove("fade-in");
+                document.body.classList.add("fade-out");
+
+                // Wait for the animation to complete, then navigate
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 1500); // Match the CSS animation duration
+            });
+        });
+    });
+</script>
+</body>
+</html>

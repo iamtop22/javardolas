@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<!-- saved from url=(0136)file:///C:/Users/hugor/OneDrive%20-%20Instituto%20Polit%C3%A9cnico%20do%20Porto/4%C2%BA%20Semestre/TMM/trabalho%201/theplug.html#aboutme -->
+<html><head>
+        <meta charset="utf-8"> 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+      <title> About Me - Hugo </title>
+      
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 62.5%; /* 1rem = 10px */
+        }
+         
+        body {
+    font-family: "Oswald", Arial, Helvetica, sans-serif;
+    background-color: rgb(10, 10, 10); /* Background color */
+    color: #f1f1f1; /* Text color */
+    opacity: 0; /* Start with opacity 0 for fade-in */
+    transition: opacity 1.5s ease; /* Smooth fade effect */
+}
+
+.fade-in {
+    opacity: 1; /* Fade in effect */
+}
+
+.fade-out {
+    opacity: 0; /* Fade out effect */
+}
+
+
+        /* Navbar superior*/
+
+        .navbar {
+            position: fixed;
+            height: 8.5vh;
+            width: 100%;
+            background-color: rgb(10, 10, 10);
+            padding: 1vh 0;
+            z-index: 1000;
+            box-shadow: 0 0.5vh 1vh hsl(0, 0%, 100%);
+            
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1vw;
+        }
+        
+        #title {
+            color: #f1f1f1;
+            font-size: 2vw;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 23vw;  
+            
+            
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1vw; /* space between links*/
+            margin-left: 50vh;
+            align-items: center;
+        }
+        
+        .nav-links li a {
+            text-decoration: none;
+            color: #f1f1f1;
+            border-radius: 2vh; /* Bordas arredondadas */
+            padding: 1vh 2vw; /* Padding vertical e horizontal */
+            text-transform: uppercase; /* Transforma todas as letras para minúsculas */
+            letter-spacing: 2px; /* Espaçamento entre letras */
+            cursor: pointer; /* Cursor padrão para links */
+            transition: all 0.3s ease; /* Transição suave */
+            font-size: 1vw;
+            
+        }
+        
+        .nav-links li a:hover {
+            background-color: hsl(0, 0%, 100%);
+            color: black;
+        }
+        
+        #instagram {
+            width: 1.5vw; /* Width of the Instagram icon */
+            height: auto; /* Height of the Instagram icon */
+            margin-right: 20vw;
+            filter: grayscale(100);
+            transition: filter 0.4s ease; /* Smooth transition for hover effect */
+            
+            }
+
+        #instagram:hover {
+            filter: grayscale(0); /* Revert to the original colors on hover */
+            
+
+        }
+
+        /* conteúdo principal */
+        
+        .aboutmain {
+            background-color: rgb(10, 10, 10);
+            padding-top: var(--navbar-height); /* Espaçamento superior para evitar sobreposição com a navbar */
+            height: 100vh; /* Altura total da tela */
+            justify-content: center;
+            display: flex;
+            align-items: center; /* Centraliza verticalmente */
+            gap: 5vw; /* Espaçamento entre imagem e texto */
+            padding: 8vh 5vw;
+            margin-right: 2vw;
+
+         }
+            
+         
+        h1 {
+            font-size: 3vh;
+            color: #ffffff;
+            background-color: rgba(255, 0, 0, 0);
+            text-align: center; /* Alinhamento do texto */
+            margin-left: -5vw;
+            
+            
+        }
+
+        .highlight {
+
+            font-family: "Alice", serif; /* Example: Different font */
+            font-size: 3vh; /* Adjust font size */
+            color: rgb(255, 255, 255); /* Change text color */
+            font-style: italic; /* Optional: Italicize the text */
+          
+
+
+        }
+
+        #aboutfoto {
+            width: 25vw; /* Largura automática para manter a proporção */
+            max-width: 50vw; /* Largura máxima de 50% da tela */
+            height: auto; /* Altura automática para manter a proporção */
+            border-radius: 2vh; /* Bordas arredondadas */
+            box-shadow: 0 0.5vh 1vh hsl(0, 0%, 100%);
+            margin-left: 15%; /* Espaçamento à esquerda */
+            margin-top: 8vh;
+            
+        }    
+
+        #topmargin {
+            margin-top: 3vh;
+            
+        }    
+           
+
+        .about-text {
+            
+            flex: 1; /* Allow the text to take up the remaining space */
+            background-color: rgba(0, 255, 255, 0);
+            height: 90%;
+            padding: 2vh 5vw;
+            margin-top: 10vh;
+            
+            
+        }   
+        .main-text {
+            font-size: 1vw; /* Tamanho do texto */
+            color: #f1f1f1; /* Cor do texto */
+            text-align: justify; /* Alinhamento do texto */
+            line-height: 2; /* Espaçamento entre linhas */
+            margin-top: 1.5vh;
+            margin-left: -5vw;
+            
+            
+        }
+
+        /* Fotos */
+
+        
+        .fotosmain {
+
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+
+        #galeria {
+            margin: 0 auto;
+            font-size: 5rem;
+            margin-bottom: 60px
+
+
+        }
+
+        /* Photo Gallery Container */
+
+        .photo-gallery {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20vw;
+            margin-top: 5h;
+            position: relative;
+        }
+
+        /* Main Photo Container */
+        .main-photo-container {
+            position: relative;
+            width: 640px;
+            height: 480px;
+            overflow: hidden;
+            border-radius: 1vh;
+            box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.5);
+        }
+
+        /* Main Photo */
+        #main-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute; /* Position the photo for sliding */
+            opacity: 1;
+        }
+
+        /* Overlay */
+        .main-photo-container .overlay {
+            position: absolute; /* Position the overlay on top of the image */
+            top: 0; /* usado porque o position: relative do image-container serve de referência porque é um elemento-pai,
+                    logo com top=0 e left=0, o overlay alinha com a posição do container. Dentro do container está a imagar, logo alinha com a imagem*/
+            left: 0;
+            width: 100%; /* Cover the entire image */
+            height: 100%; /* Cover the entire image */
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            color: #ffffff; /* White text color */
+            display: flex; /* flexbox */
+            justify-content: center; /* center horizontally*/
+            text-align: center; /* center vertically*/
+            align-items: center;  /* Center-align multi-line text */
+            font-size: 2vw;
+            font-weight: bold;
+            opacity: 0; /* Initially hide the overlay */
+            transition: opacity 0.6s ease; /* Smooth transition for hover effect */
+            border-radius: 1vh; /* Match the image's rounded corners */
+            }   
+
+        .main-photo-container:hover .overlay {
+            opacity: 1; /* Show the overlay on hover */
+            }
+
+        .overlaytext {
+            width: 90%;
+            line-height: 2;
+        }
+        
+        /* Thumbnail Gallery */
+        .thumbnail-gallery {
+            display: flex;
+            justify-content: center;
+            margin-top: 5vh;
+            overflow-y: auto;
+            padding: 3vh 1vw;
+            
+        }
+
+        .thumbnails-wrapper {
+            display: flex;
+            gap: 2vw;
+        }
+
+        .thumbnail {
+            width: 10vw;
+            height: 7.5vw;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0.5vh 1vh rgba(255, 255, 255, 0.649);
+            opacity: 1;
+        }
+
+            /* Active Thumbnail */
+        .thumbnail.active {
+        border: 0.3vh solid #ffffff; /* Highlight the active thumbnail */
+        box-shadow: 0 0.5vh 1vh rgba(255, 255, 255, 0.8); /* Add a glow effect */
+        opacity: 1; /* Fully visible for the active thumbnail */
+        }
+
+        /* Hover Effect for Active Thumbnail */
+         .thumbnail.active:hover {
+        transform: scale(1.2); /* Slightly enlarge the active thumbnail */
+        box-shadow: 0 0.7vh 1.5vh rgba(255, 255, 255, 1); /* Stronger glow effect */
+        }
+        
+
+        /* Arrows */
+        .arrow {
+            background-color: rgb(255, 255, 255); /* Semi-transparent background */
+            color: rgb(10, 10, 10);
+            border: none;
+            font-size: 2rem;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            transition: background-color 0.3s ease;
+            display: flex; /* Ensure arrows are visible */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arrow:hover {
+            background-color: rgb(37, 37, 37); /* Darker background on hover */
+        }
+
+        .left-arrow {
+            left: 28vw; /* Adjust position to make it visible */
+        }
+
+        .right-arrow {
+            right: 28vw; /* Adjust position to make it visible */
+        }
+
+
+        /* Divisória */
+
+        .splitline {
+            width: 80%;
+            border-top: 1px solid #ffffff; /* Thin white line at the top */
+            margin: 0 auto;
+            margin-bottom: 50px;
+            margin-top: 50px;
+
+        }
+
+        
+        /* Bottom navigation bar */
+
+        .bottom-navbar {
+            width: 80%;
+            height: 5vh;
+            background-color: rgb(10, 10, 10); /* Dark background */
+            border-top: 0.1vh solid #ffffff; /* Thin white line at the top */
+            display: flex;
+            justify-content: center; /* align horizontally*/
+            align-items: center; /*align vertically*/
+            transform: translateX(12%);
+            
+        }
+
+        #bottom-text {
+            
+            color: #ffffff; /* Light text color */
+            font-size: 0.7vw; /* Adjust font size */
+            font-style: italic;
+            background-color: rgba(0, 64, 255, 0);
+
+        }
+
+
+    </style>
+</head>
+    <body> 
+        <!-- Parte superior da página FIXA-->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" id="title"> Hugo Matos</a>
+            <ul class="nav-links">
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                </li>
+            </ul>
+            <a href="https://www.instagram.com/" target="_blank"> 
+                <img src="instagram.png" alt="Instagram" id="instagram"> 
+            </a>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    
+    <div class="aboutmain"> <!-- Texto + Foto principal -->
+        
+        <img src="aboutfoto.jpg" alt="Hugo Matos" id="aboutfoto">
+                
+        <div class="about-text">
+        <h1>  "Um javardolas exceto quando usa termos franceses" <br> 
+            
+            <span class="highlight"> - Jhonny Bravo </span>
+       
+        
+        </h1>
+
+        <p class="main-text" id="topmargin"> "Quando cresceu controlava sempre os compressores com os pés e ninguém o conseguia parar.
+            O estúdio vibrava com a emoção de o ver a misturar com paixão. 
+            Quando mistura pensa sempre em lançar, mas o importante é acabar nesta festa que é a produção musical."
+            Assim foi descrito por Oliver Tsubasa, o mago da produção musical. </p>
+
+        <p class="main-text">A vida de Hugo Matos é uma verdadeira incógnita até aos dias de hoje.
+            Sabe-se que cresceu em volta da música, mas no seu 18º aniversário desapareceu e foi viver para a aldeia de Gestaço
+            para não perder os torneios nacionais de sueca.
+            Desde então, tem-se dedicado a misturar música e sueca, criando uma fusão única que cativa os amantes de ambos os mundos.
+            Chegou a trabalhar com Paul McCartney, alcunha de "Paulinho", em vários discos tendo criado uma grande amizade com o mesmo e teve a possibilidade
+            de lhe ensinar a verdadeira sueca e não aquela cena que eles têm lá em Liverpool.
+            "Paulinho" gostou tanto do jogo que agora são a dupla mais temida em todo Portugal no que toca a uma suecada ganhando
+            a competição "Suecada à tuga" 3 vezes consecutivas.
+            Hugo Matos é conhecido por ser um verdadeiro javardolas, exceto quando usa termos franceses, o que o torna uma figura única no mundo da música e do jogo de sueca.
+            <br>    
+        </p>
+
+        </div>
+
+    </div>
+
+    <!-- Linha -->
+
+    <div class="splitline"> </div>
+
+    <!-- Fotos Galeria -->
+    <div class="fotosmain">
+        <h1 id="galeria">GALERIA</h1>
+    
+        <div class="photo-gallery">
+            <!-- Left Arrow -->
+            <button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
+    
+            <!-- Main Photo -->
+            <div class="main-photo-container">
+                <img id="main-photo" src="suecadapaulo.jpg" alt="Main Photo">
+                <div class="overlay">
+                    <div class="overlaytext" id="photo-caption">
+                        <p class="spacetitle">Gestaço, 1963</p>
+                        Foi o primeiro campeonato que jogaram juntos e o mais marcante porque deu origem ao álbum que fez explodir os Beatles - "A Hard Day's Night".
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Right Arrow -->
+            <button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
+        </div>
+    
+        <!-- Horizontal Thumbnail Gallery -->
+
+        <div class="thumbnail-gallery">
+            <div class="thumbnails-wrapper">
+                <img class="thumbnail" src="suecadapaulo.jpg" alt="Sueca com Paulo" onclick="selectImage(0)">
+                <img class="thumbnail" src="paulinhopic.jpg" alt="Paulinho" onclick="selectImage(1)">
+                <img class="thumbnail" src="nwapic.jpg" alt="NWA +1" onclick="selectImage(2)">
+                <img class="thumbnail" src="jcolepic.jpg" alt="Xadrez com Cole" onclick="selectImage(3)">
+                <img class="thumbnail" src="kdotpic.jpg" alt="Kdot" onclick="selectImage(4)">
+                <img class="thumbnail" src="kdotpicgrammy.jpg" alt="Kdot nos Grammys" onclick="selectImage(5)">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Parte inferior da página -->
+
+    <nav class="bottom-navbar">
+
+        <div>
+            <p id="bottom-text"> © 2025 Hugo Matos. All rights reserved. </p>
+        </div>
+       
+               
+    </nav>
+   
+
+<script>
+
+    // Efeito ao fazer scroll (opcional)
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+   // Array of images and captions
+   const images = [
+        {
+            src: "suecadapaulo.jpg",
+            caption: "Gestaço, 1963<br>Foi o primeiro campeonato que jogaram juntos e o mais marcante porque deu origem ao álbum que fez explodir os Beatles - 'A Hard Day's Night'."
+        },
+        {
+            src: "paulinhopic.jpg",
+            caption: "Inglaterra, 2005<br>Hugo e Paulinho tiveram o reconhecimento da rainha pelo seu contributo à música."
+        },
+        {
+            src: "nwapic.jpg",
+            caption: "Los Angeles, 1988<br>Primeira foto do grupo N.W.A. com Hugo depois do lançamento do primeiro disco."
+        },
+        {
+            src: "jcolepic.jpg",
+            caption: "New York, 2024<br>Jogo de Xadrez com J.Cole antes do beef com Kendrick Lamar."
+        },
+        {
+            src: "kdotpic.jpg",
+            caption: "Los Angeles, 2024<br>Foto alternativa não publicada para o álbum GNX de Kendrick Lamar."
+        },
+        {
+            src: "kdotpicgrammy.jpg",
+            caption: "Los Angeles, 2025<br>Celebração da música 'Not Like Us' ter ganho um Grammy Award por melhor música."
+        }
+    ];
+
+    let currentIndex = 0;
+
+ // Function to update the main photo and caption
+ function updateMainPhoto() {
+        const mainPhoto = document.getElementById("main-photo");
+        const photoCaption = document.getElementById("photo-caption");
+        const thumbnails = document.querySelectorAll(".thumbnail");
+
+        // Update the main photo and caption
+        mainPhoto.src = images[currentIndex].src;
+        mainPhoto.alt = images[currentIndex].caption;
+        photoCaption.innerHTML = images[currentIndex].caption;
+
+        // Remove the 'active' class from all thumbnails
+        thumbnails.forEach((thumbnail) => thumbnail.classList.remove("active"));
+
+        // Add the 'active' class to the currently selected thumbnail
+        thumbnails[currentIndex].classList.add("active");
+    }
+
+    // Function to go to the previous image
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateMainPhoto();
+    }
+
+    // Function to go to the next image
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateMainPhoto();
+    }
+
+    // Function to select an image from the thumbnails
+    function selectImage(index) {
+        currentIndex = index;
+        updateMainPhoto();
+    }
+
+    // Initialize the gallery
+    document.addEventListener("DOMContentLoaded", updateMainPhoto);
+
+</script>
+
+<script>
+
+        // Add the fade-in class when the page finishes loading
+        window.onload = () => {
+        document.body.classList.add("fade-in");
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll("a"); // Select all links
+
+        links.forEach(link => {
+            // Skip links with target="_blank"
+            if (link.target === "_blank") return;
+
+            link.addEventListener("click", (e) => {
+                e.preventDefault(); // Prevent default navigation
+                const href = link.getAttribute("href"); // Get the link's href
+
+                // Add the fade-out effect
+                document.body.classList.remove("fade-in");
+                document.body.classList.add("fade-out");
+
+                // Wait for the animation to complete, then navigate
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 1500); // Match the CSS animation duration
+            });
+        });
+    });
+</script>
+
+
+ </body>
+</html>
